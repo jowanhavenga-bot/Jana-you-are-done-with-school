@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f1e9">
+  <meta name="description" content="A little surprise, made with love.">
+  <title>A Little Something for You</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+    <section id="lily-scene" class="scene paper-scene active" aria-label="A field of lilies">
+      <div class="paper-grain"></div>
+      <div class="lily-heading">
+        <span class="eyebrow">a little something for you</span>
+        <h1>Just a moment...</h1>
+      </div>
+      <div class="lily-field" id="lily-field" aria-hidden="true">
+        <img src="assets/lily-1.png" alt="" class="lily lily-a">
+        <img src="assets/lily-3.png" alt="" class="lily lily-b">
+        <img src="assets/lily-1.png" alt="" class="lily lily-c">
+        <img src="assets/lily-3.png" alt="" class="lily lily-d">
+        <img src="assets/lily-1.png" alt="" class="lily lily-e">
+        <img src="assets/lily-3.png" alt="" class="lily lily-f">
+        <img src="assets/lily-1.png" alt="" class="lily lily-g">
+        <img src="assets/lily-3.png" alt="" class="lily lily-h">
+        <img src="assets/lily-1.png" alt="" class="lily lily-i">
+      </div>
+      <div class="swipe-prompt" id="swipe-prompt">
+        <span>Swipe them away</span>
+        <span class="swipe-arrow" aria-hidden="true">↔</span>
+      </div>
+      <div class="gesture-catcher" id="gesture-catcher" aria-label="Swipe to reveal the surprise"></div>
+    </section>
+
+    <section id="panda-scene" class="scene paper-scene" aria-label="A panda with a gift">
+      <div class="paper-grain"></div>
+      <div class="panda-wrap">
+        <img class="panda-image" src="assets/panda.png" alt="A panda holding a wrapped present">
+        <div class="speech-card" id="speech-card">
+          <p id="typed-line"></p><span class="typing-cursor">|</span>
+        </div>
+        <button class="gift-hint" id="gift-hint" type="button">Tap the gift to open it <span>↘</span></button>
+        <button class="panda-gift-hit" id="panda-gift-hit" type="button" aria-label="Open the gift"></button>
+      </div>
+    </section>
+
+    <section id="gift-scene" class="scene paper-scene" aria-label="Your gift">
+      <div class="paper-grain"></div>
+      <div class="gift-reveal">
+        <p class="eyebrow">a little surprise</p>
+        <img src="assets/gift-closeup.png" alt="A close-up of the wrapped gift" class="gift-closeup">
+        <button class="soft-button" id="open-gift">Open your gift</button>
+      </div>
+    </section>
+
+    <section id="fireworks-scene" class="scene fireworks-scene" aria-label="A fireworks celebration">
+      <canvas id="fireworks-canvas"></canvas>
+      <div class="fireworks-caption">
+        <p class="eyebrow">this one's for you</p>
+        <h1>You did it.</h1>
+        <p>Take a second. This moment is yours.</p>
+        <button class="image-next" id="next-button" type="button" aria-label="Next">
+          <img src="assets/next-button.png" alt="Next">
+        </button>
+      </div>
+    </section>
+
+    <section id="letter-scene" class="scene letter-scene">
+      <div class="letter-paper">
+        <div class="letter-content">
+          <p class="eyebrow">a note for you</p>
+          <h1>You are finally done!</h1>
+          <p>I'm very proud of you. You've really given it your all this exam season. All the late nights and early mornings — you've worked so hard, and I'm absolutely honoured that you chose me to be your study buddy. I had a blast.</p>
+          <p>I know you've still got one more left, so technically you're not quite done. But you wanted a website, and I wanted you to have it today — especially since you told me not to bring my laptop.</p>
+          <p>I'll see you in two days (I can't wait).</p>
+          <p class="love-note">I love you.</p>
+          <button class="read-done" id="read-done" type="button">Tap if you're done reading</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="drive-scene" class="scene drive-scene" aria-label="A Jetour parked beside the beach at sunset">
+      <div class="sunset-sky">
+        <div class="sun"></div>
+        <div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+      </div>
+      <div class="distant-sea"></div>
+      <div class="beach"></div>
+      <div class="coastal-bush bush-left"></div>
+      <div class="coastal-bush bush-right"></div>
+      <div class="road"></div>
+      <div class="car-stage" id="car-stage">
+        <div class="car-roof-view"></div>
+        <svg class="jetour-car" viewBox="0 0 760 310" role="img" aria-label="A dark SUV parked on the beach road">
+          <defs>
+            <linearGradient id="carPaint" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#55565a"/><stop offset=".48" stop-color="#25272b"/><stop offset="1" stop-color="#111317"/></linearGradient>
+            <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8d9a9a"/><stop offset="1" stop-color="#29383d"/></linearGradient>
+          </defs>
+          <ellipse cx="380" cy="274" rx="315" ry="25" fill="#29211e" opacity=".28"/>
+          <path d="M108 196 L145 143 Q168 122 226 115 L305 61 Q330 43 376 43 L520 50 Q555 54 580 90 L631 142 Q661 151 682 174 L695 226 Q694 249 666 254 L89 254 Q62 248 70 220Z" fill="url(#carPaint)" stroke="#17191c" stroke-width="8"/>
+          <path d="M241 113 L317 66 Q332 57 367 57 L391 58 L399 114Z" fill="url(#glass)" stroke="#1a2024" stroke-width="8"/>
+          <path d="M414 59 L514 65 Q538 68 553 96 L570 117 L414 114Z" fill="url(#glass)" stroke="#1a2024" stroke-width="8"/>
+          <path d="M122 185 L640 185" stroke="#8b8b88" stroke-width="4" opacity=".35"/>
+          <path d="M89 203 L155 194 L151 222 L82 224Z" fill="#f4d7b2"/>
+          <path d="M620 189 L677 198 L682 224 L630 221Z" fill="#c77b6a"/>
+          <rect x="300" y="188" width="125" height="9" rx="4" fill="#111"/>
+          <circle cx="205" cy="246" r="48" fill="#17191c"/><circle cx="205" cy="246" r="26" fill="#8c8b86"/><circle cx="205" cy="246" r="12" fill="#333"/>
+          <circle cx="563" cy="246" r="48" fill="#17191c"/><circle cx="563" cy="246" r="26" fill="#8c8b86"/><circle cx="563" cy="246" r="12" fill="#333"/>
+          <path d="M90 225 Q380 244 685 224" stroke="#8e9292" stroke-width="3" opacity=".25"/>
+          <text x="380" y="216" font-family="Arial,sans-serif" font-size="15" text-anchor="middle" fill="#d7d7d3" letter-spacing="3">JETOUR</text>
+        </svg>
+      </div>
+      <div class="drive-vignette"></div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
